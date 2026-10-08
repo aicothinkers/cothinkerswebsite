@@ -23,7 +23,12 @@ connectDB();
 const app = express();
 
 // Security and utility middlewares
-app.use(helmet());
+app.use(
+  helmet({
+    crossOriginResourcePolicy: false,
+    contentSecurityPolicy: false,
+  })
+);
 app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
 
 // ==========================================
