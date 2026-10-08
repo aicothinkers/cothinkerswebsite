@@ -1,0 +1,235 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color var(--transition-normal);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.brand-icon {
+  font-size: 1.5rem;
+}
+
+.desktop-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: var(--radius-full);
+  transition: background var(--transition-fast);
+}
+
+.icon-btn:hover {
+  background: var(--bg-secondary);
+}
+
+.btn-primary {
+  background-color: var(--accent-primary);
+  color: var(--bg-primary);
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background var(--transition-fast);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 8px;
+}
+
+/* MOBILE DROPDOWN STYLES */
+.mobile-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-nav { display: none; }
+  .btn-primary { display: none; }
+  .mobile-menu-btn { display: block; }
+
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--nav-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px 24px 24px 24px;
+    gap: 12px;
+    animation: fadeInMenu 0.2s ease-out forwards;
+  }
+
+  .mobile-nav-link {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-decoration: none;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+    transition: color var(--transition-fast);
+  }
+
+  .mobile-nav-link:hover {
+    color: #10b981;
+  }
+
+  .mobile-cta-wrapper {
+    padding-top: 12px;
+  }
+
+  .btn-primary-mobile {
+    display: block;
+    text-align: center;
+    background-color: var(--accent-primary);
+    color: var(--bg-primary);
+    padding: 12px 20px;
+    border-radius: var(--radius-full);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+}
+
+@keyframes fadeInMenu {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Footer specific styles */
+.footer-social-link {
+  width: 40px; 
+  height: 40px; 
+  border-radius: 50%; 
+  background: var(--bg-secondary); 
+  border: 1px solid var(--border-color); 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  color: var(--text-secondary); 
+  transition: all var(--transition-normal);
+  text-decoration: none;
+}
+
+.footer-social-link:hover {
+  color: #10b981;
+  border-color: #10b981;
+}
+
+.footer-nav-link {
+  color: var(--text-secondary); 
+  font-size: 0.95rem; 
+  transition: color var(--transition-fast); 
+  display: inline-flex; 
+  align-items: center; 
+  gap: 4px;
+  text-decoration: none;
+}
+
+.footer-nav-link:hover {
+  color: #10b981;
+}
+
+/* LOGO STYLES & CYAN GLOW EFFECT */
+.brand-logo-img {
+  height: 42px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  /* Soft turquoise/cyan ambient glow matching the brand text */
+  filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.4));
+}
+
+.brand-logo:hover .brand-logo-img {
+  transform: scale(1.04);
+  filter: drop-shadow(0 0 18px rgba(0, 229, 255, 0.75));
+}
+
+.footer-logo-img {
+  height: 48px;
+  width: auto;
+  max-width: 170px;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.4));
+}
+
+.footer-logo-img:hover {
+  transform: scale(1.04);
+  filter: drop-shadow(0 0 18px rgba(0, 229, 255, 0.75));
+}
+
+@media (max-width: 768px) {
+  .brand-logo-img {
+    height: 36px; /* Optimized height for mobile header bar */
+  }
+}
