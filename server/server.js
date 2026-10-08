@@ -67,7 +67,7 @@ app.use((err, req, res, next) => {
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
 // Catch-all route to serve React's index.html for any unknown routes
-app.get('*', (req, res) => {
+app.get(/(.*)/, (req, res) => {
   res.sendFile(path.join(__dirname, '../client/dist/index.html'));
 });
 const PORT = process.env.PORT || 5000;
