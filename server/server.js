@@ -12,6 +12,7 @@ const statsRoutes = require('./routes/statsRoutes');
 const subscriberRoutes = require('./routes/subscriberRoutes');
 const attendeeRoutes = require('./routes/attendeeRoutes');
 const jobRoutes = require('./routes/jobRoutes');
+const path = require('path');
 
 // Load env vars
 dotenv.config();
